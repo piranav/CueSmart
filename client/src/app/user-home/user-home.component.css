@@ -1,0 +1,74 @@
+.user-home-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pageview > * {
+    margin-bottom: 25px;
+}
+
+.card-container .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#caret-icon {
+    padding: 0px 5px;
+}
+
+#caret-icon:hover {
+    cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -10px;
+    padding: 12px;
+    z-index: 1;
+}
+
+.show-add-delete {
+    display: block;
+}
+
+.fa-edit:hover {
+    color: #007bff;
+}
+
+.fa-trash:hover {
+    color: #D72503;
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.card-link {
+    color: #000000;
+}
+
+.author, .date {
+    font-size: 10pt;
+    margin: 0;
+}
+
+.date {
+    margin-bottom: 5px;
+} 
+

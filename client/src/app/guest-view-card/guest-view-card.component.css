@@ -1,0 +1,84 @@
+/* single cue card display */
+.guest-view-card-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.module-dropdown {
+    height: 35px;
+    font-size: large;
+}
+
+/* flip card content 
+ * Adapted from https://www.w3schools.com/howto/howto_css_flip_card.asp */
+ .flip-card {
+    background-color: transparent;
+    width: 70%;
+    height: 450px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    margin: 20px auto 10px auto;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #FDED01;
+    transform: rotateY(180deg);
+    font-size: large;
+  }
+
+  /* card count indicator */
+  .card-count {
+    text-align: center;
+  }
+
+  /* buttons */
+  .flashcard-btns-container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #prev-btn, #next-btn {
+    min-width: 75px;
+  }
+
+  .module-desc {
+    text-align: center;
+  }

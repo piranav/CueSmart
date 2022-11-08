@@ -1,0 +1,15 @@
+.pageview > * {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-cuecard-btns {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

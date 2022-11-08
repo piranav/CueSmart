@@ -1,0 +1,38 @@
+<div class="container">
+    <div *ngIf="!isSelected" >
+        <div class="user-home-heading pageview">
+            <h1>My Cue Cards</h1>
+            <button class="btn btn-secondary" [routerLink]="['/user', userId, 'create']">Add New</button>
+        </div>
+        <!-- Cue Cards Grid -->
+        <section *ngIf="userId" class="card-container">
+            <div class="row">
+                <!-- For every cue card in the database, display it -->
+                <div *ngFor="let cuecard of cuecards; let i = index" class="col-sm-3">
+                    <div class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">{{cuecard.category}}
+                            <div class="dropdown">
+                                <!-- Edit and Delete Icon Dropdown -->
+                                <span id="caret-icon" (click)="displayEditDelete(i)"><i class="fa fa-solid fa-caret-down fa-lg"></i></span>
+                                <div [ngClass]="i === this.selectedIndex && isEditingOrDeleting ? 'dropdown-content show-add-delete' : 'dropdown-content'"> <!---->
+                                    <p [routerLink]="['/user', userId, 'edit', cuecard.courseName]"><i class="fa fa-solid fa-edit fa-lg" aria-hidden="true"></i></p>   
+                                    <p (click)="deleteCuecard(cuecard)"><i class="fa fa-solid fa-trash fa-lg" aria-hidden="true"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <a (click)="onSelect(cuecard)" class="card-link">  <!--[routerLink]="['/user/', userId, cuecard.courseName]"-->
+                            <div class="card-body">
+                                <h5 class="card-title">{{cuecard.courseName | uppercase}}</h5>
+                                <p class="author"><i class="fa fa-at fa-fw"></i>{{cuecard.author}}</p>
+                                <p class="date"><i class="fa fa-calendar fa-fw"></i>{{cuecard.dateCreated | date:'shortDate'}}</p>
+                                <p class="card-text">{{cuecard.description}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>  
+    </div>
+    <!-- Individual cue card UI -->
+    <app-user-view-card [cuecard]="selectedCuecard"></app-user-view-card>
+</div>

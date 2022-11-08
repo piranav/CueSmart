@@ -1,0 +1,23 @@
+<div class="container">
+    <section *ngIf="userId" class="pageview">
+        <h1>Create New Cuecard</h1>
+        <form id="create-cuecard-form">
+            <div class="form-group">
+                <label for="category-field">Category</label>
+                <input [(ngModel)]="newCategory" type="text" id="category-field" name="category-field" placeholder="e.g. Computer Science">
+            </div>
+            <div class="form-group">
+                <label for="course-name-field">Course Name</label>
+                <input [(ngModel)]="newCoursename" type="text" id="course-name-field" name="course-name-field" placeholder="e.g. CS 673">
+            </div>
+            <div class="form-group">
+                <label for="description-field">Description</label>
+                <input [(ngModel)]="newDescription" type="text" id="description-field" name="description-field" placeholder="Software engineering course at Boston University">
+            </div>
+            <div class="create-cuecard-btns">
+                <button class="btn btn-success" id="create-cuecard-btn" (click)="addNewCuecard()" [routerLink]="['/user', userId]">Create</button>
+                <button class="btn btn-danger" id="cancel-create-cuecard-btn" [routerLink]="['/user', userId]">Cancel</button>
+            </div>
+        </form>
+    </section>
+</div>

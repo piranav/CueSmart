@@ -1,0 +1,18 @@
+nav {
+    background-color: #007bff;
+    margin-bottom: 20px;
+}
+
+.navbar-nav a {
+    color: #FFFFFF;
+}
+
+.navbar-nav a:hover {
+    color: #e5e5e5;
+}
+
+
+/* 
+ * bulb color: #FDED01 
+ * blue color: #007bff
+*/

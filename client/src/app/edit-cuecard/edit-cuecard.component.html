@@ -1,0 +1,23 @@
+<div class="container">
+    <section *ngIf="userId" class="pageview">
+        <h1>Edit Cuecard</h1>
+        <form id="edit-cuecard-form">
+            <div class="form-group">
+                <label for="category-field">Category</label>
+                <input [(ngModel)]="newCategory" type="text" id="category-field" name="category-field">
+            </div>
+            <div class="form-group">
+                <label for="course-name-field">Course Name</label>
+                <input [(ngModel)]="newCoursename" type="text" id="course-name-field" name="course-name-field">
+            </div>
+            <div class="form-group">
+                <label for="description-field">Description</label>
+                <input [(ngModel)]="newDescription" type="text" id="description-field" name="description-field">
+            </div>
+            <div class="edit-cuecard-btns">
+                <button class="btn btn-success" id="edit-cuecard-btn" (click)="editCuecard()" [routerLink]="['/user', userId]">Save</button>
+                <button class="btn btn-danger" id="cancel-create-cuecard-btn" [routerLink]="['/user', userId]">Cancel</button>
+            </div>
+        </form>
+    </section>
+</div>

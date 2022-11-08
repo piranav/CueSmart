@@ -1,0 +1,29 @@
+<!-- If a cue card has been selected, display the first card in the cue card's first module -->
+<div *ngIf="cuecard">
+    <div class="guest-view-card-heading">
+        <h1>{{cuecard.courseName}}</h1>
+        <select class="module-dropdown" [(ngModel)]="selectedModule" (change)="fetchModule()">
+            <option *ngFor="let module of counter(cuecard.numModules); let i = index" [ngValue]="i+1">Module {{i+1}}</option>
+        </select>
+    </div>
+    <p>Created by {{cuecard.author}}</p>
+    <!--<h6 class="module-desc">Module {{selectedModule}}: {{module.description}}</h6> decided to get rid of this, no time for edit module fxn-->
+    <section class="flashcard-container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h1>{{module.individualCards[questionNum][0]}}</h1>
+              </div>
+              <div class="flip-card-back">
+                <p>{{module.individualCards[questionNum][1]}}</p>
+              </div>
+            </div>
+          </div>
+          <p class="card-count">{{questionNum+1}} of {{module.individualCards.length}}</p>
+          <div class="flashcard-btns-container">
+            <button id="prev-btn" class="btn btn-secondary" (click)="getPrevQuestion()">Prev</button>
+            <button id="next-btn" class="btn btn-primary" (click)="getNextQuestion()">Next</button>
+          </div>
+
+    </section>
+</div>

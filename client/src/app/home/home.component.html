@@ -1,0 +1,39 @@
+<div class="container">
+    <!-- If a Cue Card has not been selected, display guest homepage -->
+    <div *ngIf="!isSelected" class="pageview">
+        <h1>Browse Cue Cards</h1>
+    
+        <!-- Search Bar -->
+        <div class="input-group">
+            <div class="form-outline">
+                <input type="search" id="form1" class="form-control" [(ngModel)]="search" (change)="searchCuecards()" placeholder="Search" />
+            </div>
+            <button type="button" class="btn btn-primary" id="search-btn" (click)="searchCuecards()">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+
+        <!-- Cue Cards Grid -->
+        <section class="card-container">
+            <div class="row">
+                <!-- For every cue card in the database, display it -->
+                <div *ngFor="let cuecard of cuecards" class="col-sm-3">
+                    <a (click)="onSelect(cuecard)"  class="card-link"> <!--[routerLink]="['/guest/view/', cuecard.author, cuecard.name]"-->
+                    <div class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">{{cuecard.category}}</div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{cuecard.courseName | uppercase}}</h5>
+                            <p class="author"><i class="fa fa-at fa-fw"></i>{{cuecard.author}}</p>
+                            <p class="date"><i class="fa fa-calendar fa-fw"></i>{{cuecard.dateCreated | date:'shortDate'}}</p>
+                            <p class="card-text">{{cuecard.description}}</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Individual cue card UI -->
+    <app-guest-view-card [cuecard]="selectedCuecard"></app-guest-view-card>
+</div>

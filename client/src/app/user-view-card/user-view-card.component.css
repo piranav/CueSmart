@@ -1,0 +1,181 @@
+/* single cue card display */
+.guest-view-card-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.module-dropdown {
+    height: 35px;
+    font-size: large;
+}
+
+/* flip card content 
+ * Adapted from https://www.w3schools.com/howto/howto_css_flip_card.asp */
+ .flip-card {
+    background-color: transparent;
+    width: 70%;
+    height: 425px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    margin: 20px auto 10px auto;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do a horizontal flip when you move the mouse over the flip box container */
+  .flip-card:not(.isEdit):hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #FDED01;
+    transform: rotateY(180deg);
+    font-size: large;
+  }
+
+  /* card count indicator */
+  .card-count {
+    text-align: center;
+  }
+
+  /* buttons */
+  #module-options-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #delete-mod-btn {
+    color: #d72503;
+    padding: 5px;
+    margin-right: 10px;
+  }
+
+  #add-mod-btn {
+    color: #1FAE51;
+    padding: 5px;
+    margin-right: 20px;
+  }
+
+  #delete-mod-btn:hover, #add-mod-btn:hover {
+    cursor: pointer;
+  }
+
+  .flashcard-btns-container {
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #prev-btn, #next-btn {
+    min-width: 75px;
+  }
+
+  .module-desc {
+    text-align: center;
+  }
+
+  .flashcard-icons-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #edit-btn, #delete-btn, .add-btn {
+    background-color: #FDED01;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  #edit-btn:hover, #delete-btn:hover, .add-btn:hover {
+    cursor: pointer;
+    background-color: #f7e702;
+  }
+
+  #edit-btn {
+    padding: 7px 11px;
+  }
+
+  #delete-btn {
+    padding: 6px 12px;
+    background-color: #ff765a;
+  }
+
+  #delete-btn:hover {
+    background-color: #fd6a4d;
+  }
+
+  .add-btn {
+    padding: 7px 12px;
+  }
+
+  textarea {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+  }
+
+  #question-input {
+    font-size: xx-large;
+    color: #FFFFFF;
+  }
+
+  #question-input:focus {
+    border: 1px solid #FFFFFF;
+    outline: none;
+  }
+
+  #answer-input:focus {
+    border: 1px solid #000000;
+    outline: none;
+  }
+
+  #answer-input {
+    color: #000000;
+  }
+
+.confirm-add-btn {
+  background-color: #1FAE51;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  padding: 7px 10px;
+}
+

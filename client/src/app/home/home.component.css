@@ -1,0 +1,37 @@
+.card-container .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pageview > * {
+    margin-bottom: 25px;
+}
+
+/* sizing the search bar 90/10 */
+.form-outline {
+    width: 90%;
+}
+#search-btn {
+    width: 10%;
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.card-link {
+    color: #000000;
+}
+
+.author, .date {
+    font-size: 10pt;
+    margin: 0;
+}
+
+.date {
+    margin-bottom: 5px;
+} 
+
+
+

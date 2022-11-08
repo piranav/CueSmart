@@ -1,0 +1,22 @@
+<div class="signup-wrapper">
+    <h1 class="h3 mb-3 font-weight-normal">Become a member of Cue Smart</h1>
+    <div class="card">
+        
+        <div class="card-body">
+            
+            <form class="form-signup" (ngSubmit)="onSignUp(signUpForm)" #signUpForm="ngForm">
+
+                <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" 
+                    required autofocus ngModel>
+                
+                <input type="text" id="inputName" class="form-control" name="name" placeholder="Name" 
+                    required ngModel>
+
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" 
+                    required ngModel>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>

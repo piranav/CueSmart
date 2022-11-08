@@ -1,0 +1,25 @@
+{
+  "name": "cue-cards-app",
+  "version": "1.0.0",
+  "description": "CS 673 Term Project applying software engineering principles",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimplyGuy/cs673-team3-group-project.git"
+  },
+  "keywords": [
+    "angular",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Sam Farley, Jiaxin Chen, Piranavakumar Kandaswamy, Vivek Mahajan, Yifang Peng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimplyGuy/cs673-team3-group-project/issues"
+  },
+  "homepage": "https://github.com/SimplyGuy/cs673-team3-group-project#readme"
+}
